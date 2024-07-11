@@ -45,6 +45,8 @@ export class AppComponent implements AfterViewInit, OnInit {
       this.frase = "Sei nella BRIGATA CHEF";
     } else if(this.squadra=="bimbi"){
       this.frase = "Sei un Toad aiutante con tanto TEMPO LIBERO";
+    } else if(this.squadra=="prete"){
+      this.frase = "Addetto alle Confessioni: il vostro DON EGIDIO";
     } else {
       this.frase = "Sei nel gruppo "+this.squadra.toUpperCase();
     }

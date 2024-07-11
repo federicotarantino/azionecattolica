@@ -29,3 +29,7 @@ input:focus {
 .container-fluid.bimbi, .container-fluid.bimbi input {
   background-color: #b17ee1;
 }
+
+.container-fluid.prete, .container-fluid.prete input {
+  background-color: #b17ee1;
+}
