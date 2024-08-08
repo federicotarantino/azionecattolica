@@ -1,9 +1,11 @@
-<div [class]="getClass()">
+<div>
   <div class="container d-flex justify-content-center align-items-center flex-column vh-100">
-    <h1 *ngIf="frase" class="text-center display-1 mb-3">{{frase}}</h1>
-    <p class="h-50 mt-5">
-      <img src="assets/{{squadra}}.png" class="h-100" alt=""/>
+    <div style="height: 30%">
+      <ngx-scanner-qrcode #action="scanner" (event)="scegliSquadra($event)" [config]="config" [isBeep]="false"></ngx-scanner-qrcode>
+      <button class="btn-sm btn-outline-secondary" (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</button>
+    </div>
+    <p class="mt-1" style="height: 65%">
+      <img src="assets/{{mode}}/{{squadra}}.png" class="h-100" alt=""/>
     </p>
-    <input #mainInput type="text" class="form-control w-50 border-0" (keydown.enter)="scegliSquadra()">
   </div>
 </div>

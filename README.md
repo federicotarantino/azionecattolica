@@ -1,4 +1,7 @@
 QRCODE:
+generati da https://qurcode.com/
+
+### ACR
 
 ACQUA YWNxdWE
 ARIA YXJpYQ
@@ -9,3 +12,14 @@ TERRA dGVycmE
 BIMBI YmltYmk
 CHEF Y2hlZg
 PRETE cHJldGU
+
+### ACG
+
+BUSSOLA YnVzc29sYQ
+LANTERNA bGFudGVybmE
+MAPPA bWFwcGE
+STELLE c3RlbGxl
+
+CHEF Y2hlZg
+PRETE cHJldGU
+AIUTO YWl1dG8
