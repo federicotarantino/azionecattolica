@@ -3,13 +3,14 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.conf.json",
     "build": "ng build --base-href .",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
   },
   "private": true,
   "dependencies": {
+    "@alfresco/js-api": "^5.5.0",
     "@angular/animations": "~13.3.0",
     "@angular/common": "~13.3.0",
     "@angular/compiler": "~13.3.0",
@@ -18,9 +19,8 @@
     "@angular/platform-browser": "~13.3.0",
     "@angular/platform-browser-dynamic": "~13.3.0",
     "@angular/router": "~13.3.0",
-    "@fontsource/fugaz-one": "^5.0.19",
     "bootstrap": "^5.3.3",
-    "ngx-scanner-qrcode": "^1.6.6",
+    "luxon": "^3.6.1",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"
@@ -29,7 +29,9 @@
     "@angular-devkit/build-angular": "~13.3.9",
     "@angular/cli": "~13.3.9",
     "@angular/compiler-cli": "~13.3.0",
+    "@types/event-emitter": "^0.3.5",
     "@types/jasmine": "~3.10.0",
+    "@types/luxon": "^3.6.2",
     "@types/node": "^12.11.1",
     "jasmine-core": "~4.0.0",
     "karma": "~6.3.0",

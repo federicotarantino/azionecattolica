@@ -1,11 +1,31 @@
-<div>
-  <div class="container d-flex justify-content-center align-items-center flex-column vh-100">
-    <div style="height: 30%">
-      <ngx-scanner-qrcode #action="scanner" (event)="scegliSquadra($event)" [config]="config" [isBeep]="false"></ngx-scanner-qrcode>
-      <button class="btn-sm btn-outline-secondary" (click)="action.isStart ? action.stop() : action.start()">{{action.isStart ? 'Stop' : 'Start'}}</button>
+<div class="container d-flex justify-content-center align-items-center flex-column py-2">
+  <ng-container *ngIf="enableVote">
+    <div *ngIf="!userId">
+      <label>Inserisci il tuo nome</label>
+      <input type="text" class="form-control" [(ngModel)]="userName" placeholder="Scrivilo qui...">
+      <div class="btn btn-primary mt-2" (click)="salvaNome()" [class.disabled]="disableInput">Conferma</div>
     </div>
-    <p class="mt-1" style="height: 65%">
-      <img src="assets/{{mode}}/{{squadra}}.jpg" class="h-100" alt=""/>
-    </p>
-  </div>
+    <div *ngIf="userId">
+      <div class="alert alert-success">
+        Ciao {{userName}},<br>
+        che emozione stai provando in questo momento? Scegline una e clicca CONFERMA
+      </div>
+      <ul class="list-group emozioni">
+        <li *ngFor="let e of emozioni | keyvalue" (click)="emozione=e.key"
+            [class.active]="emozione==e.key" class="list-group-item">
+          <span class="mr-2">{{e.value}}</span> {{e.key}}
+        </li>
+      </ul>
+      <div class="btn btn-primary mt-2" (click)="salvaEmozione()" [class.disabled]="disableInput">Conferma</div>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="!enableVote">
+    <div class="alert alert-info">
+      <span style="font-size: 1.5rem">Caro Campista,</span><br>
+      non è il momento giusto per comunicarci la tua EMOZIONE!<br>
+      Forse stai usando il telefono in un orario in cui non dovresti???<br>
+      SGAMATO!
+    </div>
+    <div class="btn btn-primary" (click)="reload()">Clicca qui per aggiornare</div>
+  </ng-container>
 </div>
