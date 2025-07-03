@@ -10,10 +10,15 @@ import {AlfrescoService} from "./alfresco.service";
 export class AppComponent implements OnInit {
   title = 'ACR';
   ranges: any[] = [ // formato DHHMM
-    { id: 1, from: 22100, to: 22359 },
-    { id: 2, from: 30000, to: 32359 },
-    { id: 3, from: 41200, to: 41500 },
-    { id: 4, from: 42030, to: 42200 }
+    { id: 0, from: 41000, to: 41200 },
+    { id: 1, from: 41300, to: 41500 },
+    { id: 2, from: 41930, to: 42130 },
+    { id: 3, from: 50800, to: 51000 },
+    { id: 4, from: 51300, to: 51500 },
+    { id: 5, from: 51930, to: 52130 },
+    { id: 6, from: 60800, to: 61000 },
+    { id: 7, from: 61300, to: 61500 },
+    { id: 8, from: 61800, to: 62300 }
   ]
   emozioni: { [name: string]: string } = {
     "Felice": "😄",

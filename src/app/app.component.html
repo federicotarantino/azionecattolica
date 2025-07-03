@@ -1,4 +1,8 @@
 <div class="container d-flex justify-content-center align-items-center flex-column py-2">
+  <div class="mt-2 mb-3">
+    <img src="assets/logo.png" style="height:100px;width:auto" class="me-2">
+    <img src="assets/ac.png" style="height:100px;width:auto">
+  </div>
   <ng-container *ngIf="enableVote">
     <div *ngIf="!userId">
       <label>Inserisci il tuo nome</label>
@@ -6,9 +10,9 @@
       <div class="btn btn-primary mt-2" (click)="salvaNome()" [class.disabled]="disableInput">Conferma</div>
     </div>
     <div *ngIf="userId">
-      <div class="alert alert-success">
+      <div class="alert alert-success display-6">
         Ciao {{userName}},<br>
-        che emozione stai provando in questo momento? Scegline una e clicca CONFERMA
+        che emozione stai provando in questo momento? Scegline UNA e clicca CONFERMA
       </div>
       <ul class="list-group emozioni">
         <li *ngFor="let e of emozioni | keyvalue" (click)="emozione=e.key"
@@ -16,11 +20,13 @@
           <span class="mr-2">{{e.value}}</span> {{e.key}}
         </li>
       </ul>
-      <div class="btn btn-primary mt-2" (click)="salvaEmozione()" [class.disabled]="disableInput">Conferma</div>
+      <div class="d-flex justify-content-center align-items-center">
+        <div class="btn btn-primary btn-lg mt-2" (click)="salvaEmozione()" [class.disabled]="disableInput">Conferma</div>
+      </div>
     </div>
   </ng-container>
   <ng-container *ngIf="!enableVote">
-    <div class="alert alert-info">
+    <div class="alert alert-info display-6">
       <span style="font-size: 1.5rem">Caro Campista,</span><br>
       non è il momento giusto per comunicarci la tua EMOZIONE!<br>
       Forse stai usando il telefono in un orario in cui non dovresti???<br>
